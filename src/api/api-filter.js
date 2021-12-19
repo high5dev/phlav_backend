@@ -97,12 +97,12 @@ router.get("/get-all-document", (() => {
 })());
 router.post("/take-charge/:id", async (req, res) => {
   const id = req.params.id;
-  var url = await Url.findOne({
+  let url = await Url.findOne({
     _id: ObjectId(id)
   });
 
   if (url) {
-    url = await Url.findOneAndUpdate({
+    let url = await Url.findOneAndUpdate({
       _id: ObjectId(id)
     }, {
       $set: {
@@ -110,7 +110,7 @@ router.post("/take-charge/:id", async (req, res) => {
         assigned_to: req.body.user
       }
     });
-    url = await Url.findOne({
+    let url = await Url.findOne({
       _id: ObjectId(id)
     });
     res.json({
