@@ -114,7 +114,7 @@ router.post("/take-charge/:id", async (req, res) => {
         },
       }
     );
-    url = Url.findOne({
+    url = await Url.findOne({
       _id: ObjectId(id),
     });
     res.json({
