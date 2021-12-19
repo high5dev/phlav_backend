@@ -1,0 +1,30 @@
+{
+  "name": "filter-api",
+  "version": "1.0.0",
+  "description": "BackEnd API to filter requests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js --exec babel-node --presets babel-preset-env",
+    "lint": "eslint src/js"
+  },
+  "author": "DELPERS INC",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-openid-connect": "^2.5.2",
+    "express-validator": "^6.13.0",
+    "mongodb": "^4.2.1",
+    "mongoose": "^6.1.0",
+    "nodemon": "^2.0.15",
+    "swagger-ui-express": "^4.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.3",
+    "babel-preset-env": "^1.7.0"
+  }
+}
