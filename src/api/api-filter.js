@@ -99,7 +99,7 @@ router.get(
 router.post("/take-charge/:id", async (req, res) => {
   const id = req.params.id;
 
-  var url = await Url.findOne({
+  var url = await Url.findOneAndUpdate({
     _id: ObjectId(id),
   });
   if (url) {
@@ -114,7 +114,7 @@ router.post("/take-charge/:id", async (req, res) => {
         },
       }
     );
-    url = await Url.findOne({
+    url = await Url.findOneAndUpdate({
       _id: ObjectId(id),
     });
     res.json({
@@ -134,7 +134,7 @@ router.post("/change-status/:id", async (req, res) => {
   const { status } = req.body;
 
   const Statuses = require("../db/status-model").Statuses;
-  var url = await Url.findOne({
+  var url = await Url.findOneAndUpdate({
     _id: ObjectId(id),
   });
   if (url) {
@@ -148,7 +148,7 @@ router.post("/change-status/:id", async (req, res) => {
         },
       }
     );
-    url = await Url.findOne({
+    url = await Url.findOneAndUpdate({
       _id: ObjectId(id),
     });
     res.json({
@@ -165,7 +165,7 @@ router.post("/change-status/:id", async (req, res) => {
 
 router.get("/delete/:id", async (req, res) => {
   const id = req.params.id;
-  var url = await Url.findOne({
+  var url = await Url.findOneAndUpdate({
     _id: ObjectId(id),
   });
   if (url) {
