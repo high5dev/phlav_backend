@@ -136,7 +136,7 @@ router.post(
       });
       
       if (url) {
-        url = yield Url.findOneAndUpdate(
+        var url = yield Url.findOneAndUpdate(
           {
             _id: ObjectId(id),
           },
@@ -147,7 +147,7 @@ router.post(
             },
           }
         );
-        url = yield Url.findOne({
+        var url = yield Url.findOne({
           _id: ObjectId(id),
         });
         res.json({
@@ -189,7 +189,7 @@ router.post(
             },
           }
         );
-        url = yield Url.findOne({
+        var url = yield Url.findOne({
           _id: ObjectId(id),
         });
         res.json({
@@ -218,7 +218,7 @@ router.get(
         _id: ObjectId(id),
       });
       if (url) {
-        url = yield Url.findOneAndDelete({
+        var url = yield Url.findOneAndDelete({
           _id: ObjectId(id),
         });
         res.json({
