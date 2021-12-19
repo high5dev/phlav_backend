@@ -1,47 +1,51 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-const Statuses = require("./status-model").Statuses;
-const urlSchema = new Schema({
+"use strict";
+
+var mongoose = require("mongoose");
+
+var Schema = mongoose.Schema;
+
+var Statuses = require("./status-model").Statuses;
+
+var urlSchema = new Schema({
   lastname: {
-    type: String,
+    type: String
   },
   type: {
     type: String,
-    required: true,
+    required: true
   },
   child: {
     type: String,
-    required: true,
+    required: true
   },
   fromwho: {
     type: String,
-    required: true,
+    required: true
   },
   concerning: {
     type: String,
-    required: true,
+    required: true
   },
   details: {
-    type: String,
+    type: String
   },
   phone: {
-    type: String,
+    type: String
   },
   ip: {
-    type: String,
+    type: String
   },
   status: {
     type: Object,
-    default: Statuses.disponible,
+    default: Statuses.disponible
   },
   assigned: {
     type: Boolean,
-    default: false,
+    default: false
   },
   assigned_to: {
-    type: Object,
-  },
+    type: Object
+  }
 });
-
-const Url = mongoose.model("type", urlSchema);
+var Url = mongoose.model("type", urlSchema);
 module.exports = Url;
